@@ -66,6 +66,7 @@ void doit(int fd){
     clienterror(fd,method,"501","Not implemented","Tiny does not implement this method");
     return;
   }
+  read_requesthdrs(&rio);
 
   /*GET에서 URI 파싱*/
   is_static = parse_uri(uri,filename,cgiargs);
